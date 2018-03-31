@@ -6,12 +6,9 @@ const HelloFreshScrapper = require('./lib/hello-fresh-scrapper');
 
 (async () => {
     const browser = await puppeteer.launch({ headless: true });
-    const recipes = await HelloFreshScrapper.getRecipes({
-        browser,
-        maxPages: 1
-    });
+    await HelloFreshScrapper.getRecipes({ browser, maxPages: 5 });
+    await GeniusKitchenScrapper.getRecipes({ browser, maxPages: 5 });
 
-    console.log(`Scrapped ${recipes.length} recipes`);
-
+    console.log('Done scrapping');
     await browser.close();
 })();
