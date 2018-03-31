@@ -1,8 +1,8 @@
 'use strict';
 
-const puppeteer = require('puppeteer'),
-    fs = require('fs'),
-    util = require('util');
+const puppeteer = require('puppeteer');
+const fs = require('fs');
+const util = require('util');
 
 const writeFile = util.promisify(fs.writeFile);
 
@@ -111,13 +111,15 @@ const getRecipes = async ({ url, page, browser, maxPages, recipes = [] }) => {
     const START_PAGE = 1;
     const BASE_URL = 'http://www.geniuskitchen.com/recipe';
 
-    const browser = await puppeteer.launch({ headless: false });
+    const browser = await puppeteer.launch({ headless: true });
     const recipes = await getRecipes({
         url: BASE_URL,
-        page: 1,
+        page: START_PAGE,
         browser,
         maxPages: MAX_PAGES
     });
+
+    console.log(`Scrapped ${recipes.length} recipes`);
 
     await browser.close();
 })();
