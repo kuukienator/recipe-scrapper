@@ -1,0 +1,31 @@
+{
+    "name": "recipe-scrapper",
+    "version": "1.0.0",
+    "description": "Scrapes meal recipes from websites",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "eslint .",
+        "lint-fix": "eslint . --fix"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kuukienator/recipe-scrapper.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/kuukienator/recipe-scrapper/issues"
+    },
+    "homepage": "https://github.com/kuukienator/recipe-scrapper#readme",
+    "devDependencies": {
+        "eslint": "^4.19.1",
+        "prettier": "^1.11.1"
+    },
+    "dependencies": {
+        "axios": "^0.18.0",
+        "cheerio": "^1.0.0-rc.2",
+        "puppeteer": "^1.2.0"
+    }
+}
